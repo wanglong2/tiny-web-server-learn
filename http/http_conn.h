@@ -99,7 +99,6 @@ public:
 
 
 private:
-    void init();
     // 内部初始化，重置连接状态
     void init();
     // 读取并解析请求，返回解析结果（HTTP_CODE）
@@ -145,8 +144,6 @@ public:
     int m_state;  //读为0, 写为1
 
 private:
-    int m_sockfd;
-    sockaddr_in m_address;
     // socket 文件描述符
     int m_sockfd;
     // 客户端地址

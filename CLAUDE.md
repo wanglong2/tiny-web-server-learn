@@ -5,12 +5,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Build & Run
 
 ```bash
-sh ./build.sh          # 编译，等同于 make server
-./server               # 运行（默认端口9006）
-make clean             # 清理
+sh ./build.sh                         # 编译（默认 Debug），等价于 cmake -B build && cmake --build build
+sh ./build.sh build Release           # Release 编译
+./build/server                        # 运行（默认端口9006）
+rm -rf build                          # 清理
 ```
 
-**编译依赖**: g++, libmysqlclient, libpthread。Makefile 不带自动依赖，新增 `.cpp` 需要手动加入 makefile。
+**编译依赖**: cmake (>=3.10), g++, libmysqlclient-dev, libpthread。
 
 **启动参数**:
 
